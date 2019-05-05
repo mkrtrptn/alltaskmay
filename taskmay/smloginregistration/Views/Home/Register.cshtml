@@ -1,0 +1,72 @@
+﻿@model smloginregistration.Models.user
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Global.css" rel="stylesheet" />
+
+</head>
+<body>
+    @if(ViewBag.success != null)
+    {
+    <div class="alert alert-success">
+        <strong> @ViewBag.success</strong> 
+    </div>
+    }
+
+   
+
+
+
+    @using (Html.BeginForm())
+    {
+    <table align="center">
+        <tr>
+            <td>@Html.LabelFor(a => a.Fullname)</td>
+            <td>@Html.TextBoxFor(a => a.Fullname)</td>
+            <td id="val">@Html.ValidationMessageFor(a => a.Fullname)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a => a.Username)</td>
+            <td>@Html.TextBoxFor(a => a.Username)</td>
+            <td id="val">@Html.ValidationMessageFor(a => a.Username)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a => a.Password)</td>
+            <td>@Html.PasswordFor(a => a.Password)</td>
+            <td id="val">@Html.ValidationMessageFor(a => a.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a => a.ComfirmPassword)</td>
+            <td>@Html.TextBoxFor(a => a.ComfirmPassword)</td>
+            <td id="val">@Html.ValidationMessageFor(a => a.ComfirmPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(a => a.Email)</td>
+            <td>@Html.TextBoxFor(a => a.Email)</td>
+            <td id="val">@Html.ValidationMessageFor(a => a.Email)</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td><input type="submit" value="Register" class="btn btn-primary" /> </td>
+        </tr>
+        <tr>
+            <td> @Html.ActionLink("Login", "Login", "Home")</td>
+        </tr>
+
+    </table>
+    }
+    
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿body {
+}
+
+table,th,td{
+    padding:10px;
+}
+#val{
+    color:red;
+    font-size:medium;
+}
+
+#div1{
+    text-align:center;
+    font-size:medium;
+}
